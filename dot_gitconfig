@@ -1,0 +1,13 @@
+[alias]
+    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+    b = branch -a
+    ci = commit 
+    co = checkout
+    f = fetch --prune
+    s = status
+    clearbranch = "!f () { git checkout $1; git branch --merged|egrep -v '\\*|develop|master|main'|xargs git branch -d;  };f"
+[user]
+	name = kaepa3
+	email = tak_3_zaki3@yahoo.co.jp
+[init]
+	defaultBranch = main
